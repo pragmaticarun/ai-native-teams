@@ -1,0 +1,62 @@
+title: Governance & compliance
+questions:
+  - id: m10q1
+    type: single
+    prompt: Under the EU AI Act, which use is most likely to be high-risk?
+    choices:
+      - Summarising internal meeting notes
+      - A coding assistant
+      - AI that screens and ranks job applicants
+      - Drafting marketing copy
+    answer: 2
+    explanation: Employment uses such as recruiting are listed as high-risk (Annex III).
+  - id: m10q2
+    type: single
+    prompt: After the 2026 Digital Omnibus, when do Annex III high-risk obligations apply?
+    choices:
+      - 2 August 2025
+      - 2 August 2026
+      - 2 December 2027
+      - Never
+    answer: 2
+    explanation: They were moved from 2 August 2026 to 2 December 2027. Confirm against the official text.
+  - id: m10q3
+    type: single
+    prompt: What does Article 50 of the EU AI Act mainly require for chatbots?
+    choices:
+      - They must be certified by ISO
+      - People must be told they are interacting with an AI system
+      - They must run in the EU
+      - They must use open-weight models
+    answer: 1
+    explanation: Transparency obligations apply from 2 August 2026.
+  - id: m10q4
+    type: multi
+    prompt: What are the four functions of the NIST AI RMF?
+    choices:
+      - Govern
+      - Map
+      - Measure
+      - Manage
+    answer: [0, 1, 2, 3]
+    explanation: Govern, Map, Measure, Manage.
+  - id: m10q5
+    type: single
+    prompt: Which is the strongest sign of a well-designed AI use policy?
+    choices:
+      - It is 40 pages long
+      - It bans all AI tools until further notice
+      - It's short, specific, explains the why, and has a fast path to approve new tools
+      - Nobody has read it
+    answer: 2
+    explanation: Policies that block everything push people to unapproved tools.
+  - id: m10q6
+    type: multi
+    prompt: Which questions should you ask an AI vendor?
+    choices:
+      - Is our data used for training, and is that off by default for business accounts?
+      - How long are prompts and outputs retained?
+      - Which sub-processors see our data?
+      - What's the CEO's favourite model?
+    answer: [0, 1, 2]
+    explanation: Training use, retention, location and sub-processors are the core data questions.

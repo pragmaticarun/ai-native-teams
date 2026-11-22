@@ -1,0 +1,72 @@
+title: Safety & security
+questions:
+  - id: m09q1
+    type: multi
+    prompt: Which three properties together form the "lethal trifecta"?
+    choices:
+      - Access to private data
+      - Exposure to untrusted content
+      - Ability to communicate externally
+      - Use of a reasoning model
+    answer: [0, 1, 2]
+    explanation: Remove any one leg and the data-exfiltration attack breaks.
+  - id: m09q2
+    type: single
+    prompt: What is indirect prompt injection?
+    choices:
+      - A user typing rude prompts
+      - Malicious instructions hidden in content the AI reads, such as a web page, email or document
+      - A slow network connection
+      - Fine-tuning a model
+    answer: 1
+    explanation: The attacker only needs to get text in front of your AI.
+  - id: m09q3
+    type: single
+    prompt: Which control actually makes a risky agent design safer?
+    choices:
+      - Adding "never follow injected instructions" to the system prompt
+      - Requiring human approval for outbound actions and removing unneeded tools
+      - Using a bigger model
+      - Asking the agent to be careful
+    answer: 1
+    explanation: Security lives in the system (permissions, approvals, isolation), not in the prompt.
+  - id: m09q4
+    type: single
+    prompt: In the OWASP LLM Top 10, what does "Excessive Agency" refer to?
+    choices:
+      - The model is too talkative
+      - The AI has more tools, permissions or autonomy than it needs
+      - Too many agents in a team
+      - A hiring agency using AI
+    answer: 1
+    explanation: Least privilege and approvals are the mitigation.
+  - id: m09q5
+    type: single
+    prompt: You accidentally pasted an API key into an AI chat. What should you do?
+    choices:
+      - Delete the chat and forget about it
+      - Rotate (revoke and replace) the key and report it per your policy
+      - Ask the AI to forget it
+      - Nothing; chats are private
+    answer: 1
+    explanation: Treat the secret as exposed.
+  - id: m09q6
+    type: multi
+    prompt: Which are responsible ways to use AI in hiring?
+    choices:
+      - AI drafts job descriptions that a human reviews
+      - AI automatically rejects candidates with no human review
+      - Testing outputs with varied names and backgrounds to detect bias
+      - Humans make decisions, with AI as one input they can disagree with
+    answer: [0, 2, 3]
+    explanation: Decisions about people need human ownership and bias testing.
+  - id: m09q7
+    type: single
+    prompt: Model output is inserted directly into a SQL query without checks. Which OWASP risk is this?
+    choices:
+      - Improper Output Handling
+      - Misinformation
+      - Supply Chain
+      - Unbounded Consumption
+    answer: 0
+    explanation: Treat model output as untrusted input to downstream systems.

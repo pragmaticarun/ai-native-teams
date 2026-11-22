@@ -1,0 +1,62 @@
+title: RAG & knowledge
+questions:
+  - id: m04q1
+    type: single
+    prompt: You need to answer "what is the current status of order 4471?". What's the best approach?
+    choices:
+      - RAG over exported order PDFs
+      - A tool that queries the order system live
+      - Fine-tuning on past orders
+      - Pasting last month's order report
+    answer: 1
+    explanation: Live, exact data belongs to tools or database queries, not text retrieval.
+  - id: m04q2
+    type: single
+    prompt: Why is hybrid search (keyword plus semantic) a sensible default?
+    choices:
+      - It's cheaper than either alone
+      - Semantic search finds paraphrases while keyword search finds exact terms like codes and names
+      - It removes the need for chunking
+      - It guarantees correct answers
+    answer: 1
+    explanation: Each method covers the other's blind spots.
+  - id: m04q3
+    type: single
+    prompt: Retrieval recall@5 on your test set is 40%. What should you work on first?
+    choices:
+      - A stronger generation model
+      - Retrieval itself (chunking, hybrid search, query rewriting, reranking)
+      - The answer's tone
+      - Temperature
+    answer: 1
+    explanation: If the right source isn't retrieved, no generator can answer correctly from it.
+  - id: m04q4
+    type: multi
+    prompt: Which are essential security practices for RAG?
+    choices:
+      - Enforce document permissions using the asking user's identity
+      - Treat retrieved content as untrusted data that may contain injected instructions
+      - Index everything, including credentials, for completeness
+      - Exclude or redact sensitive data at ingest
+    answer: [0, 1, 3]
+    explanation: Never index secrets, and never let retrieval bypass access control.
+  - id: m04q5
+    type: single
+    prompt: Your assistant confidently gives two different leave policies depending on the question wording. The likely root cause?
+    choices:
+      - The embedding model is broken
+      - The document set contains contradictory or outdated sources
+      - The temperature is zero
+      - The context window is too large
+    answer: 1
+    explanation: RAG faithfully retrieves contradictions. Fix sources of truth and retire stale docs.
+  - id: m04q6
+    type: single
+    prompt: When is agentic retrieval (model decides what to search, repeatedly) worth its extra cost?
+    choices:
+      - Simple FAQ lookups
+      - Multi-hop, open-ended research questions
+      - Every question
+      - Never
+    answer: 1
+    explanation: Simple lookups suit single-shot hybrid RAG; open-ended research benefits from iterative search.

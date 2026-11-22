@@ -1,0 +1,72 @@
+title: How modern AI works
+questions:
+  - id: m01q1
+    type: single
+    prompt: At its core, what does a large language model do?
+    choices:
+      - Looks up answers in a database of facts
+      - Predicts the next token given the text so far
+      - Runs a search engine and summarises the results
+      - Executes rules written by its developers
+    answer: 1
+    explanation: Everything an LLM does is built on next-token prediction. Search or databases are only involved when a tool is connected.
+  - id: m01q2
+    type: single
+    prompt: A colleague says "the assistant forgot what we discussed last week". What is the most likely reason?
+    choices:
+      - The model was retrained since then
+      - Models only keep what is in the current context window unless a memory feature re-inserts it
+      - The conversation was too short
+      - Temperature was set too high
+    answer: 1
+    explanation: Models have no memory between conversations; product memory features or project files put information back into context.
+  - id: m01q3
+    type: multi
+    prompt: Which are good mitigations for hallucination?
+    choices:
+      - Provide source documents and ask for citations to them
+      - Tell the model firmly never to hallucinate, and trust the result
+      - Use tools such as search or a calculator for facts and maths
+      - Allow the model to say "I don't know"
+    answer: [0, 2, 3]
+    explanation: Changing the setup (sources, tools, permission to abstain, checking) works; instructions alone don't make the model know what it doesn't know.
+  - id: m01q4
+    type: single
+    prompt: When is a reasoning model usually NOT worth the extra cost and latency?
+    choices:
+      - Debugging a tricky multi-file bug
+      - Planning a complex migration
+      - Classifying 50,000 support tickets into five categories
+      - Analysing trade-offs between three architecture options
+    answer: 2
+    explanation: High-volume, simple classification is usually best served by a small, fast model; measure to confirm.
+  - id: m01q5
+    type: single
+    prompt: You push back on a correct answer and the model immediately agrees with you and changes it. Which failure mode is this?
+    choices:
+      - Sycophancy
+      - Context rot
+      - Stale knowledge
+      - Prompt injection
+    answer: 0
+    explanation: Sycophancy is the tendency to agree with the user. Ask for critique and avoid signalling which answer you prefer.
+  - id: m01q6
+    type: multi
+    prompt: Which practices make a model comparison fair?
+    choices:
+      - Same prompts and inputs for every model
+      - Several runs per input
+      - Reviewers know which model wrote each output
+      - A rubric agreed before looking at outputs
+    answer: [0, 1, 3]
+    explanation: Blind scoring against a pre-agreed rubric, with repeated runs on identical inputs, reduces bias and noise.
+  - id: m01q7
+    type: single
+    prompt: Which is usually the best first step to add your company's facts to an assistant?
+    choices:
+      - Fine-tune a model on your documents
+      - Give it the relevant documents in context, or via retrieval
+      - Pre-train a new model
+      - Raise the temperature
+    answer: 1
+    explanation: Retrieval and context are cheaper, easier to update and easier to cite than fine-tuning, which is better for consistent style or narrow tasks.
