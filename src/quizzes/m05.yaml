@@ -1,0 +1,72 @@
+title: Tools, agents & MCP
+questions:
+  - id: m05q1
+    type: single
+    prompt: When a model "calls a tool", who actually executes it?
+    choices:
+      - The model itself
+      - The application or product hosting the model
+      - The model provider's support team
+      - Nobody; it's simulated
+    answer: 1
+    explanation: The host application executes tools, which is where permissions and approvals belong.
+  - id: m05q2
+    type: single
+    prompt: Every new support ticket should be classified, routed and given a draft reply. What fits best?
+    choices:
+      - An open-ended autonomous agent
+      - A workflow with fixed steps that uses AI at each step
+      - A multi-agent org chart
+      - A computer-use agent
+    answer: 1
+    explanation: Known, repeatable paths suit workflows; agents are for paths that can't be predicted.
+  - id: m05q3
+    type: multi
+    prompt: What should you check before connecting a new MCP server?
+    choices:
+      - Who publishes and maintains it
+      - Which tools it exposes, especially write/delete tools
+      - What credentials it uses and their scope
+      - Its logo colour
+    answer: [0, 1, 2]
+    explanation: An MCP server runs with real access, so review it like software that holds your credentials.
+  - id: m05q4
+    type: single
+    prompt: Reviewers approve ~300 agent actions a day and almost never reject one. What's the risk?
+    choices:
+      - None, the agent is clearly perfect
+      - Rubber-stamping, so oversight exists on paper but doesn't catch problems
+      - Too few tokens used
+      - The agent will get bored
+    answer: 1
+    explanation: Put approvals where they matter and sample/audit the rest, so human attention is real.
+  - id: m05q5
+    type: single
+    prompt: A vendor portal you use has a public API. Should your agent use a browser/computer-use agent to operate it?
+    choices:
+      - Yes, it's more human-like
+      - No, use the API (or an MCP server); it's faster, cheaper and more reliable
+      - Yes, APIs are risky
+      - Only on weekends
+    answer: 1
+    explanation: Computer use is a bridge for systems with no API.
+  - id: m05q6
+    type: multi
+    prompt: Which are good tool-design practices?
+    choices:
+      - Clear descriptions saying what the tool does and when to use it
+      - Error messages that help the model recover
+      - Returning huge raw dumps so nothing is missed
+      - Separating read tools from write tools
+    answer: [0, 1, 3]
+    explanation: Concise outputs keep context clean; instructive errors and read/write separation improve reliability and safety.
+  - id: m05q7
+    type: single
+    prompt: In the Feng et al. autonomy levels, what is the user's role at level 4?
+    choices:
+      - Operator
+      - Collaborator
+      - Approver
+      - Observer
+    answer: 2
+    explanation: Operator, Collaborator, Consultant, Approver, Observer. At L4 the AI acts and the user approves key actions.

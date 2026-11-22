@@ -1,0 +1,52 @@
+title: Measuring value
+questions:
+  - id: m12q1
+    type: single
+    prompt: Which is the best primary value metric for an AI-redesigned support workflow?
+    choices:
+      - Number of AI-generated replies
+      - Median time to resolution, paired with customer satisfaction and reopen rate
+      - Number of AI licences bought
+      - Words generated per agent
+    answer: 1
+    explanation: Measure outcomes and quality together, not output volume.
+  - id: m12q2
+    type: single
+    prompt: Coding speed rose but end-to-end lead time didn't change. What's the likely explanation?
+    choices:
+      - The measurement is broken
+      - The bottleneck moved, e.g. to review, integration or decisions
+      - AI made things worse
+      - Lead time can't change
+    answer: 1
+    explanation: Look for the new constraint rather than declaring success.
+  - id: m12q3
+    type: single
+    prompt: Which comparison method gives the strongest evidence?
+    choices:
+      - Anecdotes from enthusiastic users
+      - Before/after on one team
+      - A randomised experiment or staggered rollout with comparison groups
+      - Self-reported time saved
+    answer: 2
+    explanation: Controls separate the AI change from everything else that happened.
+  - id: m12q4
+    type: multi
+    prompt: Which are traps when measuring AI value?
+    choices:
+      - Novelty effect
+      - Pilot volunteers being your strongest people
+      - Ignoring quality while measuring speed
+      - Defining metrics before the change
+    answer: [0, 1, 2]
+    explanation: Defining metrics up front is good practice, not a trap.
+  - id: m12q5
+    type: single
+    prompt: Why include what didn't work in a value update?
+    choices:
+      - It's required by law
+      - It increases credibility and helps sponsors make better decisions
+      - To lower expectations artificially
+      - It isn't useful
+    answer: 1
+    explanation: Honest updates with evidence earn continued investment.

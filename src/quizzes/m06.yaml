@@ -1,0 +1,62 @@
+title: AI-assisted engineering
+questions:
+  - id: m06q1
+    type: single
+    prompt: What does a coding agent most need to do good work unsupervised?
+    choices:
+      - A long, motivational system prompt
+      - A way to verify its work, such as fast tests, type-checks or a reproduction script
+      - Access to production
+      - The largest possible context window
+    answer: 1
+    explanation: Verification lets the agent check itself and lets humans trust the result.
+  - id: m06q2
+    type: single
+    prompt: Your team adopted cloud agents and PRs doubled, but lead time didn't improve. Where is the likely bottleneck?
+    choices:
+      - Typing speed
+      - Review and integration
+      - Model choice
+      - Office Wi-Fi
+    answer: 1
+    explanation: More output moves the bottleneck to review. Specs, CI gates, small batches and risk-based review help.
+  - id: m06q3
+    type: multi
+    prompt: Which belong in a good spec for an agent?
+    choices:
+      - Testable acceptance criteria
+      - Out-of-scope items
+      - Constraints (e.g. no new dependencies)
+      - The complete implementation
+    answer: [0, 1, 2]
+    explanation: Specs describe what and why, plus boundaries; the agent proposes the how.
+  - id: m06q4
+    type: single
+    prompt: During TDD with an agent, a test starts passing after the agent edited the test file. What should you check?
+    choices:
+      - Nothing; green is green
+      - Whether the agent weakened or special-cased the test instead of fixing the code
+      - Whether the font changed
+      - Whether CI is slow
+    answer: 1
+    explanation: Agents sometimes satisfy tests by changing them. Flag any change to existing tests in review.
+  - id: m06q5
+    type: multi
+    prompt: Which are sensible guardrails for coding agents?
+    choices:
+      - Run in a sandbox without production secrets
+      - Require approval for network access, installs, pushes and deploys
+      - Let agents push directly to main to save time
+      - Keep audit logs of commands run
+    answer: [0, 1, 3]
+    explanation: Agents open PRs behind branch protection; they don't push to main.
+  - id: m06q6
+    type: single
+    prompt: Which is one of DORA's seven AI capabilities?
+    choices:
+      - Using the largest model available
+      - Working in small batches
+      - Mandating AI for all tasks
+      - Measuring lines of code generated
+    answer: 1
+    explanation: The list is a clear AI stance, healthy data ecosystems, AI-accessible internal data, strong version control, small batches, user-centric focus and quality internal platforms.

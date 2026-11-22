@@ -1,0 +1,62 @@
+title: Context engineering
+questions:
+  - id: m03q1
+    type: single
+    prompt: Your model has a very large context window. Should you paste in every related document "just in case"?
+    choices:
+      - Yes, more context is always better
+      - No, irrelevant or outdated material distracts the model, costs more and can lower quality on details
+      - Yes, as long as it fits
+      - Only if temperature is low
+    answer: 1
+    explanation: Relevant beats complete. Big windows give headroom, not a reason to fill them.
+  - id: m03q2
+    type: single
+    prompt: You've corrected the AI on the same team convention three times this week. What should you do?
+    choices:
+      - Keep correcting it
+      - Add the convention to your persistent instructions file
+      - Switch models
+      - Raise the temperature
+    answer: 1
+    explanation: Every repeated correction is a missing instruction.
+  - id: m03q3
+    type: multi
+    prompt: Which are good ways to handle a long, drifting conversation?
+    choices:
+      - Ask for a summary of decisions and open questions, then start a fresh chat with it
+      - Keep going; the model remembers everything equally well
+      - Keep state in a working document the AI reads and updates
+      - Restate key constraints
+    answer: [0, 2, 3]
+    explanation: Summarise-and-restart, external state and restating constraints all counter drift.
+  - id: m03q4
+    type: single
+    prompt: In an Agent Skill, what most determines whether it gets used at the right time?
+    choices:
+      - The length of SKILL.md
+      - The description in its frontmatter, which says what it does and when to use it
+      - The folder name's capital letters
+      - The number of scripts
+    answer: 1
+    explanation: Agents see names and descriptions first, so the description is the trigger.
+  - id: m03q5
+    type: single
+    prompt: What is "progressive disclosure" in context engineering?
+    choices:
+      - Revealing the system prompt to users
+      - Showing short descriptions up front and loading full details only when a task needs them
+      - Slowly increasing temperature
+      - Gradually giving an agent admin access
+    answer: 1
+    explanation: Like a table of contents, it keeps context small until details are needed.
+  - id: m03q6
+    type: multi
+    prompt: Which belong in a good team instructions file?
+    choices:
+      - Sources of truth for facts that change
+      - Known pitfalls and what to do when unsure
+      - "Be helpful and write clearly"
+      - Non-obvious rules with the reason behind them
+    answer: [0, 1, 3]
+    explanation: Generic instructions the model already follows add noise; specific, explained rules add value.

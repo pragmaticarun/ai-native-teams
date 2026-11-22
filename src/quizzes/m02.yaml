@@ -1,0 +1,62 @@
+title: Prompting that works
+questions:
+  - id: m02q1
+    type: single
+    prompt: Which two missing parts cause most disappointing prompt results?
+    choices:
+      - Role and politeness
+      - Context and output format
+      - Magic phrases and capital letters
+      - Temperature and length
+    answer: 1
+    explanation: Models can't guess your situation or the shape you need. Give context and specify the format.
+  - id: m02q2
+    type: single
+    prompt: You want a model to critique your own draft honestly. What helps most?
+    choices:
+      - Ask in the same chat where it wrote the draft, and say you love it
+      - Ask a fresh conversation or a different model to list the weakest points against explicit criteria
+      - Ask it to rate the draft out of 10
+      - Tell it to be nice
+    answer: 1
+    explanation: A fresh context avoids defending its own work, and asking specifically for weaknesses counters sycophancy.
+  - id: m02q3
+    type: multi
+    prompt: Which make structured (JSON) output more reliable?
+    choices:
+      - Using the API or platform's schema-constrained structured-output feature
+      - Enums for categorical fields
+      - An escape hatch like confidence or "unknown" values
+      - Assuming that valid JSON means correct data
+    answer: [0, 1, 2]
+    explanation: Constrained output guarantees shape, not truth, so you still validate content.
+  - id: m02q4
+    type: single
+    prompt: You've iterated on a prompt four times with no improvement. What should you suspect first?
+    choices:
+      - You need more exclamation marks
+      - The problem is upstream, such as missing context, a task that's too big, missing tools or the wrong model
+      - The model is broken
+      - The prompt needs to be longer
+    answer: 1
+    explanation: Repeated prompt tweaks failing usually means a context, decomposition, tool or model issue.
+  - id: m02q5
+    type: single
+    prompt: Why include the reason behind a constraint ("short, because it's read on mobile")?
+    choices:
+      - It makes the prompt look professional
+      - It lets the model make better judgment calls in cases your rule didn't anticipate
+      - Models ignore constraints without reasons
+      - It reduces token cost
+    answer: 1
+    explanation: Explaining the why lets the model generalise the intent rather than applying a rule mechanically.
+  - id: m02q6
+    type: multi
+    prompt: Which fields belong in a team prompt library entry?
+    choices:
+      - Owner and last-tested date
+      - Known failure modes
+      - Inputs needed and an example output
+      - The author's personal API key
+    answer: [0, 1, 2]
+    explanation: Never store credentials in a library. Ownership, testing dates and failure modes keep entries trustworthy.

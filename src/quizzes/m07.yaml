@@ -1,0 +1,62 @@
+title: AI workflows for every role
+questions:
+  - id: m07q1
+    type: single
+    prompt: In workflow redesign, which move usually has the biggest impact?
+    choices:
+      - Making each existing step slightly faster
+      - Eliminating steps and hand-offs that no longer need to exist
+      - Buying more licences
+      - Adding more approval steps
+    answer: 1
+    explanation: Eliminate, then collapse, then automate with checkpoints.
+  - id: m07q2
+    type: single
+    prompt: An AI analysis says revenue grew 14%. What should you check first?
+    choices:
+      - The tone of the summary
+      - The code or SQL that produced the number, and whether it matches a known figure
+      - Whether the chart is colourful
+      - The model's confidence statement
+    answer: 1
+    explanation: Numbers should come from inspectable computation and be sanity-checked against known values.
+  - id: m07q3
+    type: multi
+    prompt: Which belong in a production team automation?
+    choices:
+      - A named owner and failure alerts
+      - Logging of inputs, outputs and decisions
+      - A test set re-run when prompts or models change
+      - A shared admin password in the workflow config
+    answer: [0, 1, 2]
+    explanation: Use least-privilege credentials, never shared admin passwords.
+  - id: m07q4
+    type: single
+    prompt: Your research team used AI personas instead of interviewing customers. How should the findings be treated?
+    choices:
+      - As validated user research
+      - As hypotheses to test with real users
+      - As more reliable than interviews
+      - As compliance evidence
+    answer: 1
+    explanation: Synthetic users can help rehearse and stress-test, but don't replace real users.
+  - id: m07q5
+    type: single
+    prompt: Which HR use of AI needs the most caution and human control?
+    choices:
+      - Drafting a job description
+      - Creating an onboarding checklist
+      - Ranking or screening candidates
+      - Summarising the benefits handbook
+    answer: 2
+    explanation: Decisions about people are high-risk; under the EU AI Act, employment uses are listed as high-risk.
+  - id: m07q6
+    type: single
+    prompt: What is confidence-based routing in an automation?
+    choices:
+      - Routing by how confident the requester sounds
+      - Auto-handling high-confidence, low-risk cases and sending the rest to a human
+      - Choosing the model with the most confident tone
+      - Sending everything to a manager
+    answer: 1
+    explanation: It concentrates human attention where it's needed.
